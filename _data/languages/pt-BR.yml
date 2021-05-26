@@ -69,7 +69,7 @@ state:
   tags: Tags
   categories: Categorias
 
-cheers:
+cheers: false
   um: Uhmmmm...
   ok: OK
   nice: Bom
