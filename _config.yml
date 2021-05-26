@@ -269,8 +269,8 @@ sidebar:
   #  - always  expand for all pages automatically
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
-  display: post
-  #display: always
+  #display: post
+  display: always
   #display: hide
   #display: remove
 
@@ -279,10 +279,10 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
 
 
 # Blog rolls
@@ -301,7 +301,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -651,6 +651,9 @@ canvas_sphere: false
 # Only fit scheme Pisces
 # Canvas-ribbon
 canvas_ribbon: false
+
+# Whether or not show "cheers" on the archive page
+cheers: false
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
