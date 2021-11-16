@@ -10,6 +10,44 @@ tags:
 
 # 개념
 
+Master Node
+
+etcd에 워커 노드들의 상태 정보 가지고 있음
+
+api를 통해 요청 받아서 etcd 정보 기반으로 스케줄러에게 요청 (어느 노드에서 yy 프로세스 실행하는게 가장 좋냐)
+
+스케줄러 답 - (xx노드에다가 yy프로세스 실행)
+
+스케줄러의 결과 기반으로 특정 노드 접속해서 kubelet에게 실행요청(ex, nginx 실행해줘)
+
+kubelet은 docker에 실행 요청
+
+컨트롤러가 상태 관찰하다가 뻗으면 새로운 노드에서 실행해줌
+
+Master component 요약
+
+(개수 보장 - 컨트롤러)
+
+(위치 배정 - 스케줄러)
+
+(각각 실행 - 노드)
+
+(모든 상태 저장 - etcd)
+
+(요청받아서 관리 - API)
+
+Worker Node
+
+kubelet - 노드 모니터링
+
+kube-proxy - 노드 네트워크 담당
+
+컨테이너 실제 실행 - docker
+
+kubeadm - 클러스터 관리 도구
+
+CNI - container network interface, 컨테이너 간 통신
+
 한번 쭉 돌려본 뒤에 정리하도록 하고, 일단은 설치-실행까지 먼저 해보자..
 
 # 실행
@@ -80,52 +118,59 @@ sudo systemctl enable kubelet
 ## 클러스터 구성
 
 ### Control-Plane
+
+마스터에 컴포넌트들 생성 (API, Controller, Scheduler, etcd, coreDNS)
+
 ```shell
 kubeadm init
 ```
 
+설치 완료시
+
+```
+then you can join any number of worker nodes by running the following on each as root:
+```
+
+문구와 함께 토큰이 생성된다
+(worker node 가 써야 하니까 따로 저장해두어야 함)
+
+(만료기간이 하루? 정도로 매우 짧으니까 당장만 쓸 수 있음. 이후엔 재발급해야 함) -> 글로 정리 필요
+
+모두 설치된 이후에는 다음 명령어로 path를 설정해주고
+```shell
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+```shell
+kubectl get nodes
+kubectl get nodes -o wide # ip, 커널 정보 등 추가 출력
+```
+등의 명령어를 이용해서 클러스터 상태 확인 가능.
+
+아직까지는 당연히 worker 등록을 하지 않았으니 control-plane 노드만 있다.
 
 ### Worker Node
 
 ## 도커 설치
 
 <!--
-클러스터 구성
-마스터
-(마스터에서만) (컨트롤 플레인 구성)
-kubeadm init
 
--> 하는중에 에러 남. kubelet 실행이 안 되는 중
-
-sudo mkdir /etc/docker
-cat <<EOF | sudo tee /etc/docker/daemon.json
-{
-  "exec-opts": ["native.cgroupdriver=systemd"],
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "100m"
-  },
-  "storage-driver": "overlay2"
-}
-EOF
-
-
-이후 재부팅, sudo kubeadm reset 하고 다시 init 하니까 됨
-이러면 마스터에 컴포넌트가 생성됨 (api, 컨트롤러, 스케줄러, etcd, coreDNS)
-설치 완료시 then you can join any number of worker nodes by running the following on each as root: 아래 토큰이 생성됨
-저장해두기 -> 워커노드 등록시 필요함
-근데 이거 유효기간이 엄청 짧아서 금방 사라짐.. 나는 여기까지 해놓고 워커 등록을 며칠 후에 했는데, 토큰 재생성 했음
 토큰 재생성 방법
 kubeadm token create --ttl 0 (ttl은 유효기간. 10m, 100h 등. 0은 만료기간 없음)
 해시값 구하기 (불변인듯?) : openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
 kubeadm token list (토큰 리스트 보기)
+
+클러스터 구성
 
 kubectl get nodes -> 현재 노드 보기
 근데 실행 안됨. 왜와이? path 등록 안되어있으니까.
 
 mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config  이후 다시 kubectl get nodes 하면 잘 뜸
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+이후 다시 kubectl get nodes 하면 잘 뜸
 
 마스터가 not ready일텐데, 컨테이너 네트워크가 설치되지 않아서 그럼.
 네트워크 애드온 설치 (컨테이너끼리 통신 가능하게)
