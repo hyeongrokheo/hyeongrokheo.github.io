@@ -12,9 +12,9 @@ tags:
 
 한번 쭉 돌려본 뒤에 정리하도록 하고, 일단은 설치-실행까지 먼저 해보자..
 
-# 설치
+# 실행
 
-## 공통
+## 쿠버네티스 설치
 
 도커 설치가 먼저 필요함
 
@@ -59,15 +59,9 @@ systemctl stop firewalld
 systemctl disable firewalld
 ```
 
-## Master Node
+쿠버네티스 설치 (kubelet, kubeadm, kubectl)
 
-## Worker Node
-
-## 도커 설치
-
-<!--
-쿠버네티스 설치 (kubeadm, kubectl, kubelet)
-
+```shell
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl
 
@@ -81,7 +75,21 @@ sudo apt-mark hold kubelet kubeadm kubectl
 
 sudo systemctl start kubelet
 sudo systemctl enable kubelet
+```
 
+## 클러스터 구성
+
+### Control-Plane
+```shell
+kubeadm init
+```
+
+
+### Worker Node
+
+## 도커 설치
+
+<!--
 클러스터 구성
 마스터
 (마스터에서만) (컨트롤 플레인 구성)
@@ -103,7 +111,7 @@ EOF
 
 
 이후 재부팅, sudo kubeadm reset 하고 다시 init 하니까 됨
-이러면 마스터에 컴포넌트가 생성됨 (api, 컨트롤러, 스케줄러, etcd, coreDNS) 
+이러면 마스터에 컴포넌트가 생성됨 (api, 컨트롤러, 스케줄러, etcd, coreDNS)
 설치 완료시 then you can join any number of worker nodes by running the following on each as root: 아래 토큰이 생성됨
 저장해두기 -> 워커노드 등록시 필요함
 근데 이거 유효기간이 엄청 짧아서 금방 사라짐.. 나는 여기까지 해놓고 워커 등록을 며칠 후에 했는데, 토큰 재생성 했음
