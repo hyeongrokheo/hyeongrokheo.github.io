@@ -132,9 +132,9 @@ then you can join any number of worker nodes by running the following on each as
 ```
 
 문구와 함께 토큰이 생성된다
-(worker node 가 써야 하니까 따로 저장해두어야 함)
+**(worker node 가 써야 하니까 따로 저장해두어야 함)**
 
-(만료기간이 하루? 정도로 매우 짧으니까 당장만 쓸 수 있음. 이후엔 재발급해야 함) -> 글로 정리 필요
+(만료기간이 하루? 정도로 매우 짧으니까 당장만 쓸 수 있음. 이후엔 재발급해야 함) -> 후술
 
 모두 설치된 이후에는 다음 명령어로 path를 설정해주고
 ```shell
@@ -151,34 +151,42 @@ kubectl get nodes -o wide # ip, 커널 정보 등 추가 출력
 
 아직까지는 당연히 worker 등록을 하지 않았으니 control-plane 노드만 있다.
 
+그리고 control-plane 노드가 not ready 일텐데, network add-on을 설치해야 함.
+
+```shell
+kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
+```
+
+이제 다시 클러스터 상태를 보면 ready가 된 것을 볼 수 있다. - control plane 구성 끝
+
 ### Worker Node
 
-## 도커 설치
+앞서 만들어둔 토큰을 인자로 명령어를 실행하면 됨
+```shell
+kubeadm join [master-node-ip]:[port] --token [token] --discovery-token-ca-cert-hash sha256:[hash키]
+```
+
+만약 토큰의 기간이 만료되었다면 control-plane 에서 재발급해야 함
+```shell
+# 토큰 생성
+kubeadm token create --ttl 0 # (ttl 옵션은 유효기간 설정. 10m, 100h 등. 0은 무제한)
+
+# hash 키 구하기
+openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+
+# 토큰 목록 보기
+kubeadm token list
+```
+
+나의 경우에는, kubeadm join 명령어 실행시 오류가 났음. 자세한 로그를 보기 위해서는 명령어 맨 뒤에 --v=5 옵션을 주면 에러 내용을 볼 수 있음.
+troubleshooting
+
 
 <!--
 
-토큰 재생성 방법
-kubeadm token create --ttl 0 (ttl은 유효기간. 10m, 100h 등. 0은 만료기간 없음)
-해시값 구하기 (불변인듯?) : openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
-kubeadm token list (토큰 리스트 보기)
-
-클러스터 구성
-
-kubectl get nodes -> 현재 노드 보기
-근데 실행 안됨. 왜와이? path 등록 안되어있으니까.
-
-mkdir -p $HOME/.kube
-sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
-sudo chown $(id -u):$(id -g) $HOME/.kube/config
-이후 다시 kubectl get nodes 하면 잘 뜸
-
-마스터가 not ready일텐데, 컨테이너 네트워크가 설치되지 않아서 그럼.
-네트워크 애드온 설치 (컨테이너끼리 통신 가능하게)
- kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-(마스터에서만 실행하면 됨)
 
 워커
-앞서 만들어둔 토큰을 그대로 노드들에 복사해서 실행하면 됨
+앞서 만들어둔 토큰을 인자로 명령어를 실행하면 됨그대로 노드들에 복사해서 실행하면 됨
 kubeadm join [master-node-ip]:[port] --token [token] --discovery-token-ca-cert-hash sha256:[hash키]
 -> 실행 안됨.. (에러로그 보려면 --v=5)
 워커의 kubelet이 계속 죽어서 재실행되는 현상 -> 알고보니 원래 그럼
