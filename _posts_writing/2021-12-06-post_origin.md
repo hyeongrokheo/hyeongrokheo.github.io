@@ -1,6 +1,6 @@
 ---
 title: Kubernetes 설치, 클러스터 구성
-date: 2021-11-16
+date: 2021-12-06
 categories: Study
 tags:
 - Kubernetes
@@ -8,47 +8,49 @@ tags:
 ---
 
 
-# 개념
+# 기반 정보
 
-Master Node
+## Master Node
 
 etcd에 워커 노드들의 상태 정보 가지고 있음
 
-api를 통해 요청 받아서 etcd 정보 기반으로 스케줄러에게 요청 (어느 노드에서 yy 프로세스 실행하는게 가장 좋냐)
+API를 통해 요청받아서 etcd 정보 기반으로 스케줄러에게 요청 (어느 노드에서 프로세스 실행하는게 가장 좋아?)
 
-스케줄러 답 - (xx노드에다가 yy프로세스 실행)
+-> 스케줄러의 답변 (xx노드에다가 yy프로세스 실행)
 
 스케줄러의 결과 기반으로 특정 노드 접속해서 kubelet에게 실행요청(ex, nginx 실행해줘)
 
 kubelet은 docker에 실행 요청
 
-컨트롤러가 상태 관찰하다가 뻗으면 새로운 노드에서 실행해줌
+컨트롤러가 상태 관찰하다가 문제가 생기면 새로운 노드에서 실행해줌
 
-Master component 요약
+### Master component
 
-(개수 보장 - 컨트롤러)
+controller - 개수 보장
 
-(위치 배정 - 스케줄러)
+scheduler - 위치 배정
 
-(각각 실행 - 노드)
+node - 각각 실행
 
-(모든 상태 저장 - etcd)
+etcd - 모든 상태 저장
 
-(요청받아서 관리 - API)
+API - 요청받아서 관리
 
-Worker Node
+## Worker component
 
 kubelet - 노드 모니터링
 
 kube-proxy - 노드 네트워크 담당
 
-컨테이너 실제 실행 - docker
+## 기타
+
+실제 컨테이너 실행 - docker
 
 kubeadm - 클러스터 관리 도구
 
 CNI - container network interface, 컨테이너 간 통신
 
-한번 쭉 돌려본 뒤에 정리하도록 하고, 일단은 설치-실행까지 먼저 해보자..
+한번 쭉 돌려본 뒤에 다시 정리하도록 하고, 일단은 설치-실행까지 먼저 해보자..
 
 # 실행
 
@@ -179,36 +181,18 @@ kubeadm token list
 ```
 
 나의 경우에는, kubeadm join 명령어 실행시 오류가 났음. 자세한 로그를 보기 위해서는 명령어 맨 뒤에 --v=5 옵션을 주면 에러 내용을 볼 수 있음.
-troubleshooting
+[[troubleshooting]](https://hhr.kr/study/2021/11/16/post/)
 
+다 되었으면 master 에서 확인 가능
+```shell
+kubectl get nodes # 실행중인 노드 보기
+kubectl get nodes -o wide # 더 자세하게 보기
+```
+
+- 설치 끝 -
 
 <!--
 
-
-워커
-앞서 만들어둔 토큰을 인자로 명령어를 실행하면 됨그대로 노드들에 복사해서 실행하면 됨
-kubeadm join [master-node-ip]:[port] --token [token] --discovery-token-ca-cert-hash sha256:[hash키]
--> 실행 안됨.. (에러로그 보려면 --v=5)
-워커의 kubelet이 계속 죽어서 재실행되는 현상 -> 알고보니 원래 그럼
-
-/etc/docker 에
-{
-  "exec-opts": ["native.cgroupdriver=systemd"],
-  "log-driver": "json-file",
-  "log-opts": {
-    "max-size": "100m"
-  },
-  "storage-driver": "overlay2"
-}
-추가 후
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-
-sudo vi /etc/fstab
-swap 라인 주석처리
-
-이후 sudo reboot
-다시 쿠브아담 조인 하면 잘 됨.
 마스터에서 kubectl get nodes 실행시 노드 나옴
 
 -- kube 명령어들 자동완성 등록방법
