@@ -37,14 +37,14 @@ Current working as a back-end engineer with 2 years of hands-on experience in de
 - Developed Back-End System, Web UI Front
 
 ### Boltzmann Project (2020.06 ~ 2022.01)
-- [https://boltzmann.kr/](https://boltzmann.kr/)
+- [https://boltzmann.kr/](https://boltzmann.kr/){:target="_blank"}
 - Develop Building Energy Management System (BEMS)
 - Developed BACnet protocol-based building control system
 - Developed Flask based web API
 - Developed web service for monitoring building status and control equipment
 - Migrate system to Kubernetes based
 - Approved GS Certification
-  - [https://url.kr/fzseqv](https://url.kr/fzseqv)
+  - [https://url.kr/fzseqv](https://url.kr/fzseqv){:target="_blank"}
 
 # Education & Research
 
