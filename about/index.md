@@ -7,7 +7,7 @@ type: about
 - Seoul, Korea, Republic of
 - +82 10-9979-6407
 - hhr@hhr.kr
-- [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo)
+- [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo){:target="_blank"}
 
 Current working as a back-end engineer with 2 years of hands-on experience in developing flask based back-end system and managing overall service on deployment server. Interested in system automation and DevOps, and willing to learn Docker/Kubernetes based cloud system (CI/CD).
 
@@ -24,9 +24,9 @@ Current working as a back-end engineer with 2 years of hands-on experience in de
 # Profile & Experience
 - Programming Languages: Python (preferred), C, C++
 - Founded Volunteer Organization for Software Education
-  - [https://www.instagram.com/code_coach_/](https://www.instagram.com/code_coach_/)
+  - [https://www.instagram.com/code_coach_/](https://www.instagram.com/code_coach_/){:target="_blank"}
 - Experience in building personal blog with Jekyll
-  - [https://hhr.kr](https://hhr.kr)
+  - [https://hhr.kr](https://hhr.kr){:target="_blank"}
 
 # Employment History
 
