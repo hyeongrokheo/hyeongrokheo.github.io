@@ -3,16 +3,30 @@ layout: page
 type: about
 ---
 
-Details
+# Details
+- Seoul, Korea, Republic of
+- +82 10-9979-6407
+- hhr@hhr.kr
+- [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo)
 
 Current working as a back-end engineer with 2 years of hands-on experience in developing flask based back-end system and managing overall service on deployment server. Interested in system automation and DevOps, and willing to learn Docker/Kubernetes based cloud system (CI/CD).
+
+# Languages
+- Korean (native)
+- English (Limited working proficiency)
+
+# Skills
+- Python, Flask based Web Service (API Service)
+- Overall Linux System & Docker, Back-End Development
+- Relational Database (MySQL, MariaDB, MSSQL)
+- VCS - Git
 
 # Profile & Experience
 - Programming Languages: Python (preferred), C, C++
 - Founded Volunteer Organization for Software Education
-  - https://www.instagram.com/code_coach_/
+  - [https://www.instagram.com/code_coach_/](https://www.instagram.com/code_coach_/)
 - Experience in building personal blog with Jekyll
-  - https://hhr.kr
+  - [https://hhr.kr](https://hhr.kr)
 
 # Employment History
 
@@ -23,14 +37,14 @@ Current working as a back-end engineer with 2 years of hands-on experience in de
 - Developed Back-End System, Web UI Front
 
 ### Boltzmann Project (2020.06 ~ 2022.01)
-- https://boltzmann.kr/
+- [https://boltzmann.kr/](https://boltzmann.kr/)
 - Develop Building Energy Management System (BEMS)
 - Developed BACnet protocol-based building control system
 - Developed Flask based web API
 - Developed web service for monitoring building status and control equipment
 - Migrate system to Kubernetes based
 - Approved GS Certification
-  - https://url.kr/fzseqv
+  - [https://url.kr/fzseqv](https://url.kr/fzseqv)
 
 # Education & Research
 
