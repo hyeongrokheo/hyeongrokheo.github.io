@@ -5,6 +5,8 @@ type: about
 
 [Download Resume (English)](/downloads/resume_english.pdf){:target="_blank"}
 
+[Download Resume (English)](/downloads/resume_english.pdf){:download}
+
 # Details
 - Seoul, Korea, Republic of
 - +82 10-9979-6407
