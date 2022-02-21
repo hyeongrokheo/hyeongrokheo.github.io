@@ -3,6 +3,8 @@ layout: page
 type: about
 ---
 
+[Download Resume (English)](/downloads/resume_english.pdf)
+
 # Details
 - Seoul, Korea, Republic of
 - +82 10-9979-6407
@@ -57,3 +59,5 @@ Current working as a back-end engineer with 2 years of hands-on experience in de
 - Computer Science Engineering - Intelligent System Laboratory
 - Research about Genetic Algorithm
   - Factory scheduling automation, Air conditional control automation
+
+
