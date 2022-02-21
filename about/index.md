@@ -5,7 +5,9 @@ type: about
 
 [Download Resume (English)](/downloads/resume_english.pdf){:target="_blank"}
 
-[Download Resume (English)](/downloads/resume_english.pdf){:download}
+[Download Resume (English)](/downloads/resume_english.pdf){:download="_true"}
+
+[Download Resume (English)](/downloads/resume_english.pdf){:data="download"}
 
 # Details
 - Seoul, Korea, Republic of
