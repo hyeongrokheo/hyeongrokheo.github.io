@@ -3,7 +3,7 @@ layout: page
 type: about
 ---
 
-[Download Resume (English)](/downloads/resume_english.pdf)
+[Download Resume (English)](/downloads/resume_english.pdf){:target="_blank"}
 
 # Details
 - Seoul, Korea, Republic of
