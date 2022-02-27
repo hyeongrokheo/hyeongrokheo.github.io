@@ -8,8 +8,8 @@ type: about
 [Download Resume (Korean)](/downloads/resume_korean.pdf){:download="resume_korean"}
 
 [Download Thesis]
-1. [Thesis (KIPS)](/downloads/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf){:download="resume_korean"}
-2. [Thesis (Master`s course)](/downloads/허형록_비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화.pdf){:download="resume_korean"}
+1. [Thesis (KIPS)](/downloads/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf){:download="비용_예측_모형_기반_열처리로_작업_계획_최적화"}
+2. [Thesis (Master`s course)](/downloads/비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화.pdf){:download="비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화"}
 
 
 # Details
