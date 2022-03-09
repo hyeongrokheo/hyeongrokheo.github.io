@@ -3,9 +3,9 @@ layout: page
 type: about
 ---
 
-[Download Resume (English)](/downloads/resume_english.pdf){:download="resume_english"}
+[Download CV (English)](/downloads/hyeongrok_CV_english.pdf){:download="hyeongrok_CV_english"}
 
-[Download Resume (Korean)](/downloads/resume_korean.pdf){:download="resume_korean"}
+[Download CV (Korean)](/downloads/hyeongrok_CV_korean.pdf){:download="hyeongrok_CV_korean"}
 
 [Download Thesis]
 1. [Thesis (KIPS)](/downloads/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf){:download="비용_예측_모형_기반_열처리로_작업_계획_최적화"}
