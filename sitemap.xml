@@ -29,5 +29,11 @@ sitemap:
     </url>
     {% endunless %}
   {% endfor %}
+  <url>
+    <loc>https://hhr.kr/about/</loc>
+    <lastmod>2022-02-19T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
 
