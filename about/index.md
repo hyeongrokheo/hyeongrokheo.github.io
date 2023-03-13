@@ -5,12 +5,6 @@ type: about
 
 [Download CV](/downloads/hyeongrok-cv-230311.pdf){:download="hyeongrok-cv-230311.pdf"}
 
-[//]: # ([Download Thesis])
-
-[//]: # (1. [Thesis &#40;KIPS&#41;]&#40;/downloads/backup/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf&#41;{:download="비용_예측_모형_기반_열처리로_작업_계획_최적화"})
-
-[//]: # (2. [Thesis &#40;Master`s course&#41;]&#40;/downloads/backup/비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화.pdf&#41;{:download="비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화"})
-
 # Details
 - Korea, Republic of
 - +82 10-9979-6407
@@ -30,9 +24,6 @@ Django 혹은 Rails 백엔드 엔지니어로 현재 그렙에서 프로그래�
 상시로 적게는 수십명에서 최대 수천~만명이 이용하는 화상 시험 인프라를 개발/관리하고 있습니다.
 프로그래머스 자격증 서비스의 초기 개발을 담당했습니다.
 (https://certi.programmers.co.kr/)
-
-# Languages
-- Korean (native)
 
 # Skills
 - Python, Ruby 기반 백엔드 개발  (Django, Ruby on Rails)
@@ -73,7 +64,7 @@ Django 혹은 Rails 백엔드 엔지니어로 현재 그렙에서 프로그래�
   - 기타 수많은 사소한 개선 혹은 자동화
 - 새로운 기능 개발
   - 응시자의 주변 환경 촬영 기능 개발. (영상을 aws s3에 저장하고, timestamp 마커를 레코드로 저장함으로써 감독관이 응시자의 주변 환경을 빠르게 확인할 수 있는 기능)
-  - 응시자 로그 시각화 (문의 인입을 줄이기 위해, 감독관이 실시간으로 응시자의 로그를 dynamo db로부터 확인할 수 있도록 기능 개발
+  - 응시자 로그 시각화 (문의 인입을 줄이기 위해, 감독관이 실시간으로 응시자의 로그를 dynamo db로부터 확인할 수 있도록 기능 개발)
   - 전체 서비스에 ip 제한 기능 개발 (고객사사 별 담당자가 설정할 수 있는 비즈니스용 기능)
   - 외에도 많은 스프린트동안 수많은 피쳐 개발을 맡았습니다.
 
