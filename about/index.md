@@ -3,21 +3,33 @@ layout: page
 type: about
 ---
 
-[Download CV (English)](/downloads/hyeongrok_CV_english.pdf){:download="hyeongrok_CV_english"}
+[Download CV](/downloads/hyeongrok-cv-230311.pdf){:download="hyeongrok-cv-230311.pdf"}
 
-[Download CV (Korean)](/downloads/hyeongrok_CV_korean.pdf){:download="hyeongrok_CV_korean"}
+[//]: # ([Download Thesis])
 
-[Download Thesis]
-1. [Thesis (KIPS)](/downloads/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf){:download="비용_예측_모형_기반_열처리로_작업_계획_최적화"}
-2. [Thesis (Master`s course)](/downloads/비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화.pdf){:download="비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화"}
+[//]: # (1. [Thesis &#40;KIPS&#41;]&#40;/downloads/backup/비용_예측_모형_기반_열처리로_작업_계획_최적화.pdf&#41;{:download="비용_예측_모형_기반_열처리로_작업_계획_최적화"})
+
+[//]: # (2. [Thesis &#40;Master`s course&#41;]&#40;/downloads/backup/비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화.pdf&#41;{:download="비용_예측_모형과_유전_알고리즘을_이용한_열처리로_작업_계획_최적화"})
 
 # Details
-- Seoul, Korea, Republic of
+- Korea, Republic of
 - +82 10-9979-6407
 - hhr@hhr.kr
 - [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo){:target="_blank"}
+- [https://www.linkedin.com/in/hyeongrok-heo-311675198/](https://www.linkedin.com/in/hyeongrok-heo-311675198/){:target="_blank"}
 
-Current working as a back-end engineer with 2 years of hands-on experience in developing flask based back-end system and managing overall service on deployment server. Interested in system automation and DevOps, and willing to learn Docker/Kubernetes based cloud system (CI/CD).
+# Hilights
+- 부산대학교 컴퓨터공학 학부 및 석사 졸업
+- Back-end 개발 현업 3년 이상 경력 (Python, Flask, Django, Ruby on Rails)
+- Programmers 및 Monito 평가서비스 개발
+- 프로그래머스 2022 백엔드 데브매칭 상위 0.6%, 탑프로그래머스 등록
+- [acmicpc.net (solved.ac) PS 랭킹 상위 3.3%](https://solved.ac/profile/syndrome5044)
+
+Django 혹은 Rails 백엔드 엔지니어로 현재 그렙에서 프로그래머스, 모니토 온라인 화상시험 서비스를 개발중입니다.
+(https://programmers.co.kr/, https://monito.io/)
+상시로 적게는 수십명에서 최대 수천~만명의 화상 시험 인프라를 개발/관리하고 있습니다.
+프로그래머스 자격증 서비스의 초기 개발을 담당했습니다.
+(https://certi.programmers.co.kr/)
 
 # Languages
 - Korean (native)
