@@ -7,8 +7,8 @@ type: about
 
 # Details
 - Korea, Republic of
-- +82 10-9979-6407
-- hhr@hhr.kr
+- mobile : +82 10-9979-6407
+- mail : hhr@hhr.kr
 - [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo){:target="_blank"}
 - [https://www.linkedin.com/in/hyeongrok-heo-311675198/](https://www.linkedin.com/in/hyeongrok-heo-311675198/){:target="_blank"}
 
