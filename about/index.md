@@ -19,9 +19,13 @@ type: about
 - [acmicpc.net(solved.ac) 레이팅 상위 3.35%](https://solved.ac/profile/syndrome5044), 탑프로그래머스 뱃지 보유 (데브매칭 상위 0.6%)
 
 Django 혹은 Ruby on Rails 백엔드 엔지니어로 현재 그렙에서 프로그래머스, 모니토 온라인 화상시험 서비스를 개발중입니다.
+
+상시로 적게는 수십명에서 최대 수천~만명이 이용하는 화상 시험 인프라 및 백엔드를 개발/관리하고 있습니다.
+
 (https://programmers.co.kr/, https://monito.io/)
-상시로 적게는 수십명에서 최대 수천~만명이 이용하는 화상 시험 인프라를 개발/관리하고 있습니다.
+
 프로그래머스 자격증 서비스의 초기 개발을 담당했습니다.
+
 (https://certi.programmers.co.kr/)
 
 # Experience
