@@ -3,7 +3,7 @@ layout: page
 type: about
 ---
 
-[Download CV (updated at 2023.03.14)](/downloads/hyeongrok-cv-230314.pdf){:download="hyeongrok-cv-230314.pdf"}
+[Download CV (updated at 2023.04.04)](/downloads/hyeongrok-cv-230404.pdf){:download="hyeongrok-cv-230404.pdf"}
 
 # Details
 - Korea, Republic of
@@ -12,7 +12,7 @@ type: about
 - [https://github.com/hyeongrokheo](https://github.com/hyeongrokheo){:target="_blank"}
 - [https://www.linkedin.com/in/hyeongrok-heo-311675198/](https://www.linkedin.com/in/hyeongrok-heo-311675198/){:target="_blank"}
 
-# Hilights
+# Highlights
 - 부산대학교 컴퓨터공학 학부 및 석사 졸업
 - Back-end 개발 현업 4년차 (Python, Flask, Django, Ruby on Rails)
 - Programmers 및 Monito 평가서비스 개발
