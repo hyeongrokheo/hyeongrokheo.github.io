@@ -3,7 +3,7 @@ layout: page
 type: about
 ---
 
-[Download CV (updated at 2023.04.04)](/downloads/hyeongrok-cv-230404.pdf){:download="hyeongrok-cv-230404.pdf"}
+[Download CV (updated at 2023.03.30)](/downloads/hyeongrok-cv-230330.pdf){:download="hyeongrok-cv-230330.pdf"}
 
 # Details
 - Korea, Republic of
